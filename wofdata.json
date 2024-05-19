@@ -1,0 +1,17 @@
+[
+    {"label":"2 hours", 	"value":"120m", 	"message":"WOW! You just won 3 hours"},
+    {"label":"Bokya", 		"value":"", 		"message":"BOKYA!"},
+    {"label":"30 mins", 	"value":"30m", 		"message":"You won 30 minutes!"},
+    {"label":"Bokya", 		"value":"", 		"message":"Wag kang mag alala mahal ka nya."},
+    {"label":"1 hour", 		"value":"60m", 		"message":"You won 1 hour!"},
+    {"label":"Bokya", 		"value":"", 		"message":"BOKYA!"},
+    {"label":"20 mins", 	"value":"20m", 		"message":"You got 20 minutes"},
+    {"label":"Bokya", 		"value":"", 		"message":"Ok lang yan insan!<br>Mekus mekus na lang next time."},
+    {"label":"bokya", 		"value":"", 		"message":"Mas masakit pa to sa breakup."},
+    {"label":"Jackpot!", 	"value":"300m", 	"message":"Congratulations!<br>You just won a jackpot!<br>Enjoy your 5 hours!"},
+    {"label":"Bokya", 		"value":"", 		"message":"Better luck next time!"},
+    {"label":"Bokya", 		"value":"", 		"message":"BOKYA!"},
+    {"label":"1 point", 	"value":"1p", 		"message":"Balik taya! (1 point)"},
+    {"label":"Bokya", 		"value":"", 		"message":"BOKYA!"},
+    {"label":"2 points", 	"value":"2p", 		"message":"You won 2 points"}
+]

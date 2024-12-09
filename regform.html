@@ -62,28 +62,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#registrationForm').submit(function (event) {
-                event.preventDefault(); // Prevent default form submission
-                
-                // Gather form data
-                const formData = new FormData(this);
+			$('#registrationForm').submit(function (event) {
+				event.preventDefault(); // Prevent default form submission
 
-                // Send data to Google Apps Script
-                $.ajax({
-                    url: 'https://script.google.com/macros/s/AKfycbyf2Pz_6s8rK5k_R_iLmqhF90KjlShZjAv_453x15VoO_XAC7FsXiYavKCRpYUzFpPB/exec',
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function (response) {
-                        alert('Registration successful: ' + response);
-                        $('#registrationForm')[0].reset(); // Reset the form
-                    },
-                    error: function () {
-                        alert('An error occurred. Please try again later.');
-                    }
-                });
-            });
+				// Gather form data
+				const formData = new FormData(this);
+				const data = {
+					fullname: formData.get('fullname'),
+					birthday: formData.get('birthday'),
+					phone: formData.get('phone'),
+					facebook: formData.get('facebook'),
+					email: formData.get('email'),
+					picture: formData.get('picture') // Assuming picture is uploaded to a separate URL
+				};
+
+				// Send data to Google Apps Script
+				$.ajax({
+					url: 'https://script.google.com/macros/s/AKfycbyf2Pz_6s8rK5k_R_iLmqhF90KjlShZjAv_453x15VoO_XAC7FsXiYavKCRpYUzFpPB/exec',
+					type: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify(data),
+					success: function (response) {
+						const res = JSON.parse(response);
+						if (res.status === 'success') {
+							alert('Registration submitted successfully!');
+							$('#registrationForm')[0].reset();
+						} else {
+							alert('Error: ' + res.message);
+						}
+					},
+					error: function () {
+						alert('An error occurred while submitting the form.');
+					}
+				});
+			});
         });
     </script>
 </body>
